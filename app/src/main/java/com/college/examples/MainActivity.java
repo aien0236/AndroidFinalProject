@@ -1,6 +1,8 @@
 package com.college.examples;
 
 import android.os.Bundle;
+import android.view.Menu;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.college.examples.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
+        // set the toolbar
+        setSupportActionBar(binding.mainToolbar);
+
      }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
